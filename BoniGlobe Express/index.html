@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="main/design/landingpage.css">
+  <link rel="icon" href="main/design/images/turboLogo.png">
+  <title>BoniGlobe Express</title>
+  <style>
+      .map-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header>
+    <div class="nav-inner container">
+      <div class="logo">BoniGlobe Express</div>
+      <a href="main/login.html">
+      <button class="btn-primary">Get Started</button>
+      </a>
+    </div>
+  </header>
+<main>
+    <div class="map-background">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d6604.5496882403095!2d120.55946091512126!3d18.05684378012015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTjCsDAzJzI5LjEiTiAxMjDCsDMzJzM0LjUiRQ!5e0!3m2!1sen!2sph!4v1748432900417!5m2!1sen!2sph"
+      width="100%"
+      height="100%"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+</main>
+  <!-- Hero -->
+  <section class="hero container">
+    <div class="hero-text">
+      <h1>Fast. Reliable. Everywhere.</h1>
+      <p>Ship packages across Ilocos with confidence and speed.</p>
+      <div class="hero-buttons">
+        <a href="main/login.html" class="btn-white">Send a Package now</a>
+        <a href="main/information.html" class="btn-outline">Learn More</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="main/design/images/turboLogo.png" alt="Delivery" />
+    </div>
+  </section>
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" x-data="dashboard()" x-init="init()">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Information - BoniGlobe Express</title>
+  <link rel="stylesheet" href="design/dashboard.css">
+  <link rel="icon" href="design/images/turboLogo.png">
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <style>
+    .map-background {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      z-index: -1;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+   <div class="map-background">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d6604.5496882403095!2d120.55946091512126!3d18.05684378012015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTjCsDAzJzI5LjEiTiAxMjDCsDMzJzM0LjUiRQ!5e0!3m2!1sen!2sph!4v1748432900417!5m2!1sen!2sph"
+      width="100%"
+      height="100%"
+      style="border:0;"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+   </div>
+  <header x-data="{ menuOpen: false, infoOpen: false, dashOpen: false }">
+    <div class="left-section">
+      <img src="design/images/turboLogo.png" alt="BoniGlobe Logo" />
+    </div>
+
+    <div class="center-section">
+      <div class="logo-text">BoniGlobe Express</div>
+      <div class="tagline">From Our Door to Yours—Fast.</div>
+    </div>
+
+    <div class="hamburger" @click="menuOpen = !menuOpen">&#9776;</div>
+
+  </header>
+
+  <section class="info-section">
+    <p>
+      Our team is committed to excellence in every aspect of the delivery process — from pickup to drop-off — ensuring each package is handled with precision, security, and care. Whether it's urgent documents, parcels, or bulk deliveries, BoniGlobe Express delivers with consistency and confidence.
+    </p>
+
+    <h2>What Sets Us Apart:</h2>
+    <ul>
+      <li><strong>Speed & Reliability:</strong> Fast turnaround and dependable service.</li>
+      <li><strong>Comprehensive Logistics:</strong> Covering primary, secondary, and tertiary delivery needs.</li>
+      <li><strong>Customer-Centered Approach:</strong> Tailored solutions and real-time delivery tracking.</li>
+      <li><strong>Local Expertise:</strong> In-depth knowledge of regional routes and delivery challenges.</li>
+      <li><strong>0 Shipping Fee:</strong> Free Shipping fees without compromising service quality.</li>
+    </ul>
+
+    <p>
+      At BoniGlobe Express, our mission is to simplify logistics and help our clients grow by making delivery faster, easier, and more reliable. We envision becoming a leading name in local logistics — not just for moving goods, but for moving trust.
+    </p>
+    <h2>Our Packaging</h2>
+    <ul>
+        <li><h4>Primary</h4></li>
+        <p>Direct Delivery, Deliver the Product as it is</p>
+        <li><h4>Secondary</h4></li>
+        <p>Secure Packaging, We provide the box or as appropriate</p>
+        <li><h4>Tertiary</h4></li>
+        <p>Protected Packaging, Most Secure</p>
+    </ul>
+  </section>
+
+  <div id="footerlogo">
+    <img src="design/images/turboLogo.png" height="100" alt="BoniGlobe Logo" />
+    <span class="footer-text">BoniGlobe Express</span>
+    <div>
+      <a href="https://www.facebook.com/mr.abbo.505" target="_blank">
+        <button class="facebook">Facebook</button>
+      </a>
+    </div>
+  </div>
+
+  </script>
+</body>
+</html>

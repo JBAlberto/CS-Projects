@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" x-data="signupForm()">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="design/logindesign.css" />
+  <link rel="icon" href="design/images/turboLogo.png">
+  <title>BoniGlobe Sign Up</title>
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+</head>
+<body>
+  <div class="left-section">
+    <img src="design/images/turboLogo.png" alt="BoniGlobe Logo" height="90" />
+  </div>
+
+  <h3 style="color: aqua;">Join BoniGlobe Today</h3>
+  <h1 style="color: white;">Create Your Account</h1>
+
+  <form class="form" @submit.prevent="submitForm">
+    <span class="input-span">
+      <label class="label">Username</label>
+      <input type="text" x-model="username" required />
+      <div x-text="errors.username" style="color:red;"></div>
+    </span>
+
+    <span class="input-span">
+      <label class="label">Email</label>
+      <input type="email" x-model="email" required />
+      <div x-text="errors.email" style="color:red;"></div>
+    </span>
+
+    <span class="input-span">
+      <label class="label">Password</label>
+      <input type="password" x-model="password" required />
+      <div x-text="errors.password" style="color:red;"></div>
+    </span>
+
+    <input class="submit" type="submit" value="Sign Up" />
+    <p class="span" style="margin-top: 0.5rem;">Already have an account? <a href="login.html">Log in</a></p>
+  </form>
+
+  <div x-text="successMessage" style="color:lightgreen; margin-top:10px;"></div>
+
+  <script>
+    function signupForm() {
+      return {
+        username: '',
+        email: '',
+        password: '',
+        errors: {},
+        successMessage: '',
+
+        submitForm() {
+          this.errors = {};
+          this.successMessage = '';
+
+          fetch('Backend/signup.php', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              username: this.username,
+              email: this.email,
+              password: this.password,
+            }),
+          })
+          .then(res => res.json())
+          .then(data => {
+            if (data.success) {
+              this.successMessage = data.message;
+              this.username = '';
+              this.email = '';
+              this.password = '';
+            } else {
+              this.errors = data.errors || { general: data.message };
+            }
+          })
+          .catch(error => {
+            this.errors.general = 'Something went wrong.';
+            console.error(error);
+          });
+        }
+      }
+    }
+  </script>
+</body>
+</html>

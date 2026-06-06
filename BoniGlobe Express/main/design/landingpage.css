@@ -1,0 +1,198 @@
+    /* Reset & base */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f9fafb;
+      color: #333;
+      line-height: 1.6;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    ul {
+      list-style: none;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+
+    /* Navbar */
+    header {
+      background: white;
+      box-shadow: 0 2px 4px rgb(0 0 0 / 0.1);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1000;
+    }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .logo {
+      font-weight: 700;
+      font-size: 24px;
+      color: #2563eb; /* blue-600 */
+    }
+    nav {
+      display: flex;
+      gap: 24px;
+    }
+    nav a {
+      font-weight: 500;
+      color: #4b5563; /* gray-700 */
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #2563eb;
+    }
+    .btn-primary {
+      background-color: #2563eb;
+      color: white;
+      padding: 10px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      border: none;
+    }
+    .btn-primary:hover {
+      background-color: #1e40af; /* darker blue */
+    }
+    /* Mobile menu button */
+    .menu-btn {
+      background: none;
+      border: none;
+      cursor: pointer;
+      display: none;
+    }
+    .menu-btn svg {
+      width: 24px;
+      height: 24px;
+      stroke: #4b5563;
+    }
+
+    /* Mobile Menu */
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      background: white;
+      padding: 16px 20px;
+      box-shadow: 0 4px 6px rgb(0 0 0 / 0.1);
+      position: absolute;
+      top: 60px;
+      width: 100%;
+      left: 0;
+      z-index: 999;
+    }
+    .mobile-menu a {
+      padding: 10px 0;
+      font-weight: 600;
+      color: #4b5563;
+    }
+    .mobile-menu a:hover {
+      color: #2563eb;
+    }
+    .mobile-menu .btn-primary {
+      width: 100%;
+      text-align: center;
+      margin-top: 12px;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(90deg, #7f7f7f, #363737);
+      color: white;
+      padding: 140px 20px 80px; /* top padding accounts for fixed navbar */
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      opacity: 0.5;
+    }
+    .hero:hover{
+      opacity: 1;
+    }
+    .hero-text {
+      flex: 1 1 400px;
+      max-width: 600px;
+    }
+    .hero-text h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+    .hero-text p {
+      font-size: 1.125rem;
+      margin-bottom: 30px;
+      max-width: 500px;
+    }
+    .hero-buttons a {
+      display: inline-block;
+      padding: 12px 32px;
+      font-weight: 600;
+      border-radius: 12px;
+      margin-right: 16px;
+      transition: background-color 0.3s ease;
+      cursor: pointer;
+    }
+    .btn-white {
+      background: white;
+      color: #2563eb;
+    }
+    .btn-white:hover {
+      background: #e0e7ff;
+    }
+    .btn-outline {
+      border: 2px solid white;
+      color: white;
+    }
+    .btn-outline:hover {
+      background: white;
+      color: #2563eb;
+    }
+    .hero-image {
+      flex: 1 1 400px;
+      max-width: 600px;
+      border-radius: 16px;
+      box-shadow: 0 20px 30px rgb(0 0 0 / 0.15);
+      overflow: hidden;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      nav {
+        display: none;
+      }
+      .menu-btn {
+        display: block;
+      }
+      .hero {
+        flex-direction: column;
+        padding-top: 120px;
+      }
+      .hero-text, .hero-image {
+        max-width: 100%;
+      }
+      .steps {
+        flex-direction: column;
+        gap: 40px;
+      }
+      .plans {
+        flex-direction: column;
+      }
+    }
